@@ -1,0 +1,53 @@
+<div class="destination-cards">
+  <h2>Enjoy your dream vacation</h2>
+  <p>
+    Plan and book your perfect trip with expert advice, travel tips, destination
+    information, and inspiration from us
+  </p>
+  <div class="cards-container">
+    <div class="card" *ngFor="let destination of destinations">
+      <div class="card-image">
+        <img [src]="destination.image" [alt]="destination.name" />
+      </div>
+      <div class="card-info">
+        <h3>{{ destination.name }}</h3>
+        <p>{{ destination.properties }} properties</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="inspiration-cards">
+  <h2>Get inspiration for your next trip</h2>
+  <div class="cards-container2">
+    <div class="card2" *ngFor="let inspiration of inspirations">
+      <div class="card-image2">
+        <img [src]="inspiration.image" [alt]="inspiration.title" />
+      </div>
+      <div class="card-content">
+        <h3>{{ inspiration.title }}</h3>
+        <p>{{ inspiration.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="hotels-cards">
+  <h2>Popular hotels</h2>
+  <div class="cards-container3">
+    <div class="card3" *ngFor="let hotel of hotels">
+      <div class="card-image3">
+        <img [src]="hotel.image" [alt]="hotel.name" />
+      </div>
+      <div class="card-info3">
+        <h3>{{ hotel.name }}</h3>
+        <p>{{ hotel.properties }} properties</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="motivation">
+  <h2>Explore the world with My Dream place</h2>
+  <p>Discover new places and experiences</p>
+</div>

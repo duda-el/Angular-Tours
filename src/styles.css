@@ -1,0 +1,24 @@
+/* src/styles.css or src/styles.scss */
+:root {
+  --primary-color: #2f80ed;
+}
+
+@font-face {
+  font-family: sf-pro;
+  src: url(../public/assets/fonts/SFPRODISPLAYREGULAR.OTF);
+}
+
+@font-face {
+  font-family: sf-pro-medium;
+  src: url(../public/assets/fonts/SFPRODISPLAYMEDIUM.OTF);
+}
+
+@font-face {
+  font-family: sf-pro-bold;
+  src: url(../public/assets/fonts/SFPRODISPLAYBOLD.OTF);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}

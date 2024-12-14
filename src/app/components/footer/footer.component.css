@@ -1,0 +1,77 @@
+.footer {
+  width: 100%;
+  background-color: white;
+  padding-top: 4rem;
+  font-family: "sf-pro";
+  border-top: 1px solid #ddd;
+}
+
+.logo-image2 {
+  width: 28px;
+  height: auto;
+  padding-bottom: 13px;
+  padding-right: 10px;
+}
+
+.footer-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: #333;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin-right: 1rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.brand-icon {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.footer-section h4 {
+  font-size: 1.1rem;
+  font-family: "sf-pro-bold";
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+  font-family: "sf-pro";
+  font-size: 0.9rem;
+}
+
+.footer-section ul li a {
+  color: #007bff;
+  font-family: "sf-pro";
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  background-color: #ebebeb;
+  color: #4f4f4f;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.875rem;
+  margin-top: 2rem;
+}

@@ -1,0 +1,209 @@
+.destination-cards {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  width: 90%;
+  margin: auto auto;
+  margin-top: 40px;
+}
+
+.destination-cards h2 {
+  font-family: "sf-pro-bold";
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.destination-cards p {
+  font-family: "sf-pro";
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card-image img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.card-info {
+  background-color: #fff;
+  padding-top: 10px;
+  text-align: left;
+}
+
+.card-info h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-info p {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0.5rem 0 0;
+}
+
+/* inspiration */
+.inspiration-cards {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  width: 90%;
+  margin: auto auto;
+  margin-top: 40px;
+}
+
+.inspiration-cards h2 {
+  font-family: "sf-pro-bold";
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.cards-container2 {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card2 {
+  width: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-image2 {
+  height: 250px;
+  overflow: hidden;
+}
+
+.card-image2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  color: white;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.card-content h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* hotels */
+.hotels-cards {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  width: 90%;
+  margin: auto auto;
+  margin-top: 40px;
+}
+
+.hotels-cards h2 {
+  font-family: "sf-pro-bold";
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hotels-cards p {
+  font-family: "sf-pro";
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.cards-container3 {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card3 {
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card-image3 img {
+  width: 100%;
+  height: 350px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.card-info3 {
+  background-color: #fff;
+  padding-top: 10px;
+  text-align: left;
+}
+
+.card-info3 h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-info3 p {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0.5rem 0 0;
+}
+
+.motivation {
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: auto auto;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.motivation h2 {
+  font-size: 2rem;
+  font-family: "sf-pro";
+}
+
+.motivation p {
+  font-size: 1.2rem;
+  font-family: "sf-pro";
+  color: var(--primary-color);
+}
