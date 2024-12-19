@@ -1,9 +1,9 @@
-.header-main{
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.header-main {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header {
@@ -77,6 +77,10 @@
   background-color: white;
   color: var(--primary-color);
   font-family: "sf-pro";
+  text-decoration: none;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .signin-btn {
@@ -87,4 +91,29 @@
   align-items: center;
   display: flex;
   justify-content: center;
+}
+
+.profile-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.log-out {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  width: 82px;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: white;
 }

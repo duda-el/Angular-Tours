@@ -1,12 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../services/user.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+  currentUser: any = null;
 
+  constructor(private userService: UserService) {}
+
+  ngOnInit() {
+    this.currentUser = this.userService.getCurrentUser(); // Get user from session
+  }
+
+  logout() {
+    this.userService.logout();
+    this.currentUser = null; 
+  }
 }

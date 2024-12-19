@@ -13,9 +13,20 @@
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
-    <div class="auth-buttons">
-      <button class="register-btn">Register</button>
+    <div class="auth-buttons" *ngIf="!currentUser; else loggedIn">
+      <a href="/register" class="register-btn">Register</a>
       <a href="/signin" class="signin-btn">Sign In</a>
     </div>
+
+    <ng-template #loggedIn>
+      <div class="user-menu">
+        <img
+          [src]="currentUser?.profileImage"
+          alt="Profile Image"
+          class="profile-img"
+        />
+        <button (click)="logout()" class="log-out">Logout</button>
+      </div>
+    </ng-template>
   </header>
 </div>
