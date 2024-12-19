@@ -22,9 +22,32 @@
         <input type="text" id="checkout" placeholder="Check-out" />
       </div>
       <div class="input-group">
-        <i class="icon fas fa-users"></i>
-        <input type="number" placeholder="Guests" />
+        <div class="guest-dropdown-summary" (click)="toggleDropdown()">
+          <i class="fas fa-users"></i>
+          <span>{{ guestSummary }}</span>
+          <i class="fas" [ngClass]="{'fa-chevron-down': !dropdownOpen, 'fa-chevron-up': dropdownOpen}"></i>
+        </div>
+        <div class="guest-dropdown-menu" [class.show]="dropdownOpen">
+          <div class="guest-input-group">
+            <span>Adults</span>
+            <div class="counter">
+              <button (click)="decrement('adults')" [disabled]="adults === 1">-</button>
+              <span>{{ adults }}</span>
+              <button (click)="increment('adults')">+</button>
+            </div>
+          </div>
+          <div class="guest-input-group">
+            <span>Children</span>
+            <div class="counter">
+              <button (click)="decrement('children')" [disabled]="children === 0">-</button>
+              <span>{{ children }}</span>
+              <button (click)="increment('children')">+</button>
+            </div>
+          </div>
+        </div>
       </div>
+      
+
       <button class="search-button">Search</button>
     </div>
   </div>
@@ -33,7 +56,7 @@
   <div class="covid-alert">
     <p class="covid-text">
       <i class="fas fa-exclamation-triangle warning-icon"></i>
-      Check the latest COVID-19 restrictions before you travel.  
+      Check the latest COVID-19 restrictions before you travel.
       <span>Learn more</span>
     </p>
   </div>

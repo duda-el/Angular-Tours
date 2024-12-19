@@ -147,3 +147,102 @@
   color: #ffcc00;
   margin-right: 5px;
 }
+
+.input-group {
+  position: relative;
+  flex: 1;
+  min-width: 150px;
+  max-width: 200px;
+  font-family: "sf-pro";
+}
+
+.input-group .guest-dropdown-summary {
+  width: 100%;
+  padding: 10px 20px 10px 35px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #f2f2f2;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.input-group .guest-dropdown-summary i {
+  font-size: 1rem;
+  color: #888;
+}
+
+.input-group .guest-dropdown-menu {
+  position: absolute; /* Ensure the dropdown menu overflows */
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 10px 0;
+  overflow-y: auto;
+  max-height: 200px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  visibility: hidden;
+}
+
+.input-group .guest-dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.input-group .guest-input-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+}
+
+.input-group .guest-input-group span {
+  font-size: 1rem;
+  color: #555;
+}
+
+.input-group .counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-group .counter button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  font-size: 1rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.input-group .counter button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.input-group .counter span {
+  width: 20px;
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+}
+
+.hero-search .fa-users {
+  font-size: 1.2rem;
+  color: #888;
+  margin-right: 10px;
+}
