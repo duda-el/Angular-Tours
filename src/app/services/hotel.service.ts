@@ -62,7 +62,7 @@ export class HotelService {
       reviews: 250,
     },
     {
-      image: '/assets/hotels/hotel5.png',
+      image: '/assets/hotels/hotel5.jpg',
       title: 'Georgian Comfort Inn',
       overview:
         'Traditional Georgian hospitality with modern amenities. Close to historical landmarks.',
@@ -77,7 +77,7 @@ export class HotelService {
       reviews: 500,
     },
     {
-      image: '/assets/hotels/hotel6.png',
+      image: '/assets/hotels/hotel6.jpg',
       title: 'The Royal Stay',
       overview:
         'A luxurious hotel offering top-notch amenities and royal treatment for all guests.',
@@ -120,4 +120,9 @@ export class HotelService {
       )
     );
   }
+
+  getAllHotels(): Observable<Hotel[]> {
+    return of(this.hotels);
+  }
+  
 }

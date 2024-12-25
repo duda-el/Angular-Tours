@@ -28,13 +28,24 @@ export class DiscoverComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
-      this.destination = params['destination'];
-      this.checkIn = params['checkIn'];
-      this.checkOut = params['checkOut'];
-      this.adults = +params['adults'];
-      this.children = +params['children'];
+      this.destination = params['destination'] || ''; // Default to empty string if not provided
+      this.checkIn = params['checkIn'] || '';
+      this.checkOut = params['checkOut'] || '';
+      this.adults = +params['adults'] || 0;
+      this.children = +params['children'] || 0;
 
-      this.fetchHotels();
+      // Determine whether to fetch filtered or all hotels
+      if (
+        this.destination ||
+        this.checkIn ||
+        this.checkOut ||
+        this.adults ||
+        this.children
+      ) {
+        this.fetchFilteredHotels();
+      } else {
+        this.fetchAllHotels();
+      }
     });
   }
 
@@ -44,7 +55,13 @@ export class DiscoverComponent implements OnInit {
     return Array.from({ length: validRating }, (_, i) => i + 1);
   }
 
-  fetchHotels(): void {
+  fetchAllHotels(): void {
+    this.hotelService.getAllHotels().subscribe((data) => {
+      this.hotels = data;
+    });
+  }
+
+  fetchFilteredHotels(): void {
     this.hotelService
       .getHotels(
         this.destination,
@@ -57,4 +74,36 @@ export class DiscoverComponent implements OnInit {
         this.hotels = data;
       });
   }
+
+  onSortChange(event: Event): void {
+    const sortValue = (event.target as HTMLSelectElement).value;
+    this.sortHotels(sortValue);
+  }
+
+  sortHotels(sortValue: string): void {
+    switch (sortValue) {
+      case 'recommended':
+        // Default sorting logic, if applicable
+        this.fetchAllHotels(); // Assuming this resets the sorting to default
+        break;
+      case 'priceLowToHigh':
+        this.hotels.sort(
+          (a, b) =>
+            (a.price ?? a.newPrice ?? Infinity) - (b.price ?? b.newPrice ?? Infinity)
+        );
+        break;
+      case 'priceHighToLow':
+        this.hotels.sort(
+          (a, b) =>
+            (b.price ?? b.newPrice ?? -Infinity) - (a.price ?? a.newPrice ?? -Infinity)
+        );
+        break;
+      case 'rating':
+        this.hotels.sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
+        break;
+      default:
+        break;
+    }
+  }
+  
 }

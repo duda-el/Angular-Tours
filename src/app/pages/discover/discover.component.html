@@ -14,11 +14,11 @@
     <button class="tab">Residence</button>
     <button class="tab">Resort</button>
     <button class="tab">Shared Space</button>
-    <select class="sort-dropdown">
-      <option>Sort by Recommended</option>
-      <option>Price: Low to High</option>
-      <option>Price: High to Low</option>
-      <option>Rating</option>
+    <select class="sort-dropdown" (change)="onSortChange($event)">
+      <option value="recommended">Sort by Recommended</option>
+      <option value="priceLowToHigh">Price: Low to High</option>
+      <option value="priceHighToLow">Price: High to Low</option>
+      <option value="rating">Rating</option>
     </select>
   </div>
 
