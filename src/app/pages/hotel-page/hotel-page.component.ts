@@ -32,7 +32,12 @@ export class HotelPageComponent implements OnInit {
       .replace(/^-+|-+$/g, '');  // Remove leading or trailing hyphens
   }
 
-  createStarArray(rating: number): number[] {
-    return Array(Math.round(rating)).fill(0); // Create an array with 'rating' number of elements
+  createStarArray(rating: number | undefined): number[] {
+    if (!rating) {
+      return [];
+    }
+    return Array(Math.round(rating)).fill(0);
   }
+  
+  
 }
