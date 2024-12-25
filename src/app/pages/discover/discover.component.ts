@@ -3,11 +3,13 @@ import { ActivatedRoute } from '@angular/router';
 import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from '../../components/header/header.component';
+import { SearchComponent } from '../../components/search/search.component';
 
 @Component({
   selector: 'app-discover',
   templateUrl: './discover.component.html',
-  imports: [CommonModule],
+  imports: [CommonModule, HeaderComponent, SearchComponent],
   standalone: true,
   styleUrls: ['./discover.component.css'],
 })
@@ -32,6 +34,13 @@ export class DiscoverComponent implements OnInit {
       this.fetchHotels();
     });
   }
+
+  createStarArray(rating: number): number[] {
+    const maxStars = 5;
+    const validRating = Math.min(Math.max(rating || 0, 0), maxStars); // Ensure rating is between 0 and 5
+    return Array.from({ length: validRating }, (_, i) => i + 1);
+  }
+  
 
   fetchHotels(): void {
     this.hotelService

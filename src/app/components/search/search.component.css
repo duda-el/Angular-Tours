@@ -1,0 +1,216 @@
+.hero-search {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px; /* Slightly increased gap */
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+.input-group {
+  position: relative;
+  flex: 1;
+  min-width: 220px; /* Increased width */
+  max-width: 220px;
+  font-family: "sf-pro";
+  height: 40px; /* Uniform height */
+}
+
+.input-group input {
+  width: 100%;
+  height: 100%; /* Ensure input fills the height */
+  padding: 10px 15px 10px 35px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #f2f2f2;
+  color: #555;
+  box-sizing: border-box; /* Prevent padding from altering dimensions */
+}
+
+.input-group input::placeholder {
+  color: #888;
+  font-size: 1rem;
+}
+
+.input-group input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.input-group .icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #888;
+}
+
+.input-group .guest-dropdown-summary {
+  width: 100%;
+  height: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #f2f2f2;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.input-group .guest-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 10px 0;
+  overflow-y: auto;
+  max-height: 200px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  visibility: hidden;
+}
+
+.input-group .guest-dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.input-group .guest-input-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+}
+
+.input-group .guest-input-group span {
+  font-size: 1rem;
+  color: #555;
+}
+
+.input-group .counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-group .counter button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ddd;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #555;
+  cursor: pointer;
+  text-align: center;
+}
+
+.input-group .counter button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.input-group .counter span {
+  width: 20px;
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+}
+
+button,
+.search-button {
+  display: inline-block;
+  width: 100%;
+  max-width: 220px; /* Increased width */
+  height: 40px; /* Uniform height */
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+button:hover,
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.hero-search .fa-users {
+  font-size: 1.2rem;
+  color: #888;
+  margin-right: 10px;
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.suggestions-dropdown li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.suggestions-dropdown li:last-child {
+  border-bottom: none;
+}
+
+.suggestions-dropdown li:hover {
+  background-color: #f9f9f9;
+}
+
+.suggestions-dropdown .icon {
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+.suggestion-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestion-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.suggestion-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+}

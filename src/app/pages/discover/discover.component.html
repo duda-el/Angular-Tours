@@ -1,20 +1,96 @@
+<div class="blue-bg">
+  <app-header></app-header>
+  <div class="search-container">
+    <app-search></app-search>
+  </div>
+</div>
 <div class="discover">
-    <h2>Hotels in {{ destination }}</h2>
-    <div *ngIf="hotels.length > 0; else noHotels">
-      <div *ngFor="let hotel of hotels" class="hotel-card">
-        <h3>{{ hotel.title }}</h3>
-        <p>{{ hotel.overview }}</p>
-        <p><strong>Location:</strong> {{ hotel.location }}</p>
-        <p><strong>Rating:</strong> {{ hotel.rating }}</p>
-        <p><strong>Price:</strong> ${{ hotel.price }}</p>
-        <p *ngIf="hotel.sale">
-          <strong>Sale:</strong> {{ hotel.sale }}% Off, New Price: ${{ hotel.newPrice }}
-        </p>
-        <button>Book Now</button>
+  <h2>Hotels in {{ destination }}: {{ hotels.length }} search results found</h2>
+
+  <!-- Tab navigation -->
+  <div class="tabs">
+    <button class="tab active">Our top picks</button>
+    <button class="tab">Hotel and apartments</button>
+    <button class="tab">Residence</button>
+    <button class="tab">Resort</button>
+    <button class="tab">Shared Space</button>
+    <select class="sort-dropdown">
+      <option>Sort by Recommended</option>
+      <option>Price: Low to High</option>
+      <option>Price: High to Low</option>
+      <option>Rating</option>
+    </select>
+  </div>
+
+  <h3 class="filter-text">Filter By</h3>
+  <div class="content">
+    <div class="filters">
+      <div class="filter-item">
+        <h4>Your budget per day</h4>
+        <ul>
+          <li>
+            <label><input type="checkbox" /> $0 - $200</label> <span>200</span>
+          </li>
+          <li>
+            <label><input type="checkbox" /> $200 - $500</label>
+            <span>100</span>
+          </li>
+          <li>
+            <label><input type="checkbox" /> $500 - $1,000</label>
+            <span>15</span>
+          </li>
+          <li>
+            <label><input type="checkbox" /> $1,000 - $2,000</label>
+            <span>12</span>
+          </li>
+          <li>
+            <label><input type="checkbox" /> $2,000 - $5,000</label>
+            <span>230</span>
+          </li>
+        </ul>
       </div>
     </div>
-    <ng-template #noHotels>
-      <p>No hotels found for your search criteria.</p>
-    </ng-template>
+
+    <div class="hotels-list">
+      <div *ngFor="let hotel of hotels" class="hotel-card">
+        <img [src]="hotel.image" alt="{{ hotel.title }}" class="hotel-image" />
+        <div class="hotel-details">
+          <div class="hotel-info">
+            <h3>{{ hotel.title }}</h3>
+            <p class="rating">
+              <span>
+                <i
+                  *ngFor="let star of createStarArray(hotel.rating)"
+                  class="fa fa-star"
+                ></i>
+              </span>
+              <span>{{ hotel.rating }}</span> ({{ hotel.reviews }} Reviews)
+            </p>
+
+            <p class="hotel-overview">{{ hotel.overview }}</p>
+            <button class="btn">See availability</button>
+          </div>
+          <div class="hotel-pricing">
+            <p *ngIf="hotel.sale" class="discount-badge">
+              Book now and receive {{ hotel.sale }}% off
+            </p>
+            <p class="rooms">{{ hotel.rooms.length }} room(s) available</p>
+            <p class="price">
+              <span *ngIf="hotel.sale" class="old-price"
+                >${{ hotel.price }}</span
+              >
+              <span class="new-price">
+                ${{ hotel.sale ? hotel.newPrice : hotel.price }}
+              </span>
+            </p>
+            <p class="rooms">Includes taxes and fees</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  
+
+  <ng-template #noHotels>
+    <p>No hotels found for your search criteria.</p>
+  </ng-template>
+</div>

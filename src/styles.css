@@ -3,6 +3,10 @@
   --primary-color: #2f80ed;
 }
 
+/* Add this in your styles.css or styles.scss */
+@import "~font-awesome/css/font-awesome.css";
+
+
 @font-face {
   font-family: sf-pro;
   src: url(../public/assets/fonts/SFPRODISPLAYREGULAR.OTF);

@@ -1,4 +1,5 @@
 export interface Hotel {
+  image: string;
   title: string;
   overview: string;
   location: string;
@@ -9,4 +10,5 @@ export interface Hotel {
   rooms: string[];
   availability: { start: string; end: string }[];
   people: { adults: number; children: number };
+  reviews: number; 
 }
