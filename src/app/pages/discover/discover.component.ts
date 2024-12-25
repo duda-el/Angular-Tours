@@ -21,7 +21,10 @@ export class DiscoverComponent implements OnInit {
   adults: number = 0;
   children: number = 0;
 
-  constructor(private route: ActivatedRoute, private hotelService: HotelService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private hotelService: HotelService
+  ) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
@@ -40,11 +43,16 @@ export class DiscoverComponent implements OnInit {
     const validRating = Math.min(Math.max(rating || 0, 0), maxStars); // Ensure rating is between 0 and 5
     return Array.from({ length: validRating }, (_, i) => i + 1);
   }
-  
 
   fetchHotels(): void {
     this.hotelService
-      .getHotels(this.destination, this.checkIn, this.checkOut, this.adults, this.children)
+      .getHotels(
+        this.destination,
+        this.checkIn,
+        this.checkOut,
+        this.adults,
+        this.children
+      )
       .subscribe((data) => {
         this.hotels = data;
       });
