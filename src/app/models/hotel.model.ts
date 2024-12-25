@@ -1,5 +1,5 @@
 export interface Hotel {
-  image: string;
+  images: string[];
   title: string;
   overview: string;
   location: string;

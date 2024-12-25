@@ -1,0 +1,176 @@
+.hotel-details {
+  width: 100%;
+  background: #f3f3f3;
+  padding-bottom: 50px;
+}
+
+.hotel-details-child {
+  width: 55%;
+  margin: auto auto;
+  padding-top: 10px;
+}
+
+.hotel-images-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.hotel-large-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.hotel-small-images {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+}
+
+.hotel-small-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.hotel-tabs {
+  display: flex;
+  justify-content: start;
+  margin-top: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-left: 50px;
+  font-family: "sf-pro";
+}
+
+.tab.active {
+  color: #333333;
+  border-color: #2f80ed;
+}
+
+.hotel-overview {
+  padding-top: 20px;
+  padding-left: 50px;
+}
+
+.hotel-overview h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: "sf-pro-bold";
+}
+
+.star {
+  color: #ffc107;
+}
+
+.hotel-overview .rating {
+  font-size: 1rem;
+  color: #4f4f4f;
+  margin-bottom: 10px;
+  font-family: "sf-pro";
+}
+
+.hotel-overview .location {
+  font-size: 1rem;
+  color: #555;
+  font-family: "sf-pro";
+}
+
+.hotel-overview .location i {
+  color: #007bff;
+  margin-right: 5px;
+}
+
+.hotel-overview2 {
+  margin-top: 5px;
+  width: 50%;
+  background-color: white;
+  height: auto;
+  margin-top: 10px;
+  margin-left: 40px;
+  padding: 10px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  font-family: "sf-pro";
+}
+
+.hotel-overview2 h2 {
+  font-size: 1.3rem;
+  font-family: "sf-pro";
+}
+
+.hotel-overview2 p {
+  margin-top: 5px;
+  font-size: 1.2rem;
+  font-family: "sf-pro";
+  color: #181818;
+}
+
+.hotel-facilities {
+  width: 50%;
+  background-color: white;
+  height: auto;
+  margin-left: 40px;
+  padding: 10px;
+  border-top: 2px solid #e0e0e0;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  font-family: "sf-pro";
+  padding-bottom: 15px;
+}
+
+.facilities-list {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.facilities-list h3 {
+  font-size: 1.3rem;
+  font-family: "sf-pro";
+  color: #181818;
+}
+
+.facility {
+  display: flex;
+  align-items: left;
+  gap: 15px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.facility i {
+  width: 20px;
+  height: 20px;
+  font-size: 1.3rem;
+  color: #007bff; /* Icon color */
+}
+
+.facilities-list-row2 {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 10px;
+}
+
+.facilities-list-row1 {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 10px;
+}

@@ -84,7 +84,7 @@
 
     <div class="hotels-list">
       <div *ngFor="let hotel of filteredHotels" class="hotel-card">
-        <img [src]="hotel.image" alt="{{ hotel.title }}" class="hotel-image" />
+        <img [src]="hotel.images[0]" alt="{{ hotel.title }}" class="hotel-image" />
         <div class="hotel-details">
           <div class="hotel-info">
             <h3>{{ hotel.title }}</h3>

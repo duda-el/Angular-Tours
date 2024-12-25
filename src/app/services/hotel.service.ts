@@ -8,7 +8,7 @@ import { Hotel } from '../models/hotel.model';
 export class HotelService {
   private hotels: Hotel[] = [
     {
-      image: '/assets/hotels/hotel1.png',
+      images: ['/assets/hotels/hotel1.png', '/assets/hotels/hotel2.png', '/assets/hotels/hotel3.png'],
       title: 'Luxury Suites',
       overview:
         'Reats include a glass of Czech champagne, parking and a late checkout. Gym included. Flexible cancellation applies.',
@@ -23,7 +23,7 @@ export class HotelService {
       reviews: 1200,
     },
     {
-      image: '/assets/hotels/hotel2.png',
+      images: ['/assets/hotels/hotel2.png'],
       title: 'Budget Inn',
       overview:
         'Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies.',
@@ -36,7 +36,7 @@ export class HotelService {
       reviews: 100,
     },
     {
-      image: '/assets/hotels/hotel7.jpg',
+      images: ['/assets/hotels/hotel7.jpg'],
       title: 'Mediterranean Escape',
       overview:
         'A beachfront hotel offering exquisite Mediterranean cuisine and stunning sea views.',
@@ -49,7 +49,7 @@ export class HotelService {
       reviews: 300,
     },
     {
-      image: '/assets/hotels/hotel4.png',
+      images: ['/assets/hotels/hotel4.png'],
       title: 'City Lights Hotel',
       overview:
         'Located in the heart of the city with easy access to popular attractions. Free breakfast included.',
@@ -62,7 +62,7 @@ export class HotelService {
       reviews: 250,
     },
     {
-      image: '/assets/hotels/hotel5.jpg',
+      images: ['/assets/hotels/hotel5.jpg'],
       title: 'Georgian Comfort Inn',
       overview:
         'Traditional Georgian hospitality with modern amenities. Close to historical landmarks.',
@@ -77,7 +77,7 @@ export class HotelService {
       reviews: 500,
     },
     {
-      image: '/assets/hotels/hotel6.jpg',
+      images: ['/assets/hotels/hotel6.jpg'],
       title: 'The Royal Stay',
       overview:
         'A luxurious hotel offering top-notch amenities and royal treatment for all guests.',
@@ -90,7 +90,7 @@ export class HotelService {
       reviews: 800,
     },
     {
-      image: '/assets/hotels/hotel8.jpg',
+      images: ['/assets/hotels/hotel8.jpg'],
       title: 'Historic Haven',
       overview:
         'A charming hotel with a mix of historic and modern decor. Perfect for history enthusiasts.',
