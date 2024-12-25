@@ -99,10 +99,7 @@
             </p>
 
             <p class="hotel-overview">{{ hotel.overview }}</p>
-            <button
-              class="btn"
-              [routerLink]="['/hotel', slugifyTitle(hotel.title)]"
-            >
+            <button class="btn" [routerLink]="['/hotel', slugify(hotel.title)]">
               See availability
             </button>
           </div>

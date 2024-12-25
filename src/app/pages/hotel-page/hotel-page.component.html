@@ -1,0 +1,60 @@
+<div *ngIf="hotel; else noHotelFound" class="hotel-details">
+  <!-- Hotel Image -->
+  <img [src]="hotel.image" alt="{{ hotel.title }}" class="hotel-image" />
+
+  <!-- Hotel Title and Overview -->
+  <div class="hotel-info">
+    <h1>{{ hotel.title }}</h1>
+    <p>{{ hotel.overview }}</p>
+  </div>
+
+  <!-- Location and Rating -->
+  <div class="hotel-meta">
+    <p><strong>Location:</strong> {{ hotel.location }}</p>
+    <p>
+      <strong>Rating:</strong>
+      <span
+        *ngFor="let star of createStarArray(hotel.rating)"
+        class="fa fa-star"
+      ></span>
+      {{ hotel.rating }} ({{ hotel.reviews }} Reviews)
+    </p>
+  </div>
+
+  <!-- Room Options -->
+  <div class="hotel-rooms">
+    <h3>Available Rooms:</h3>
+    <ul>
+      <li *ngFor="let room of hotel.rooms">{{ room }}</li>
+    </ul>
+  </div>
+
+  <!-- Pricing Information -->
+  <div class="hotel-pricing">
+    <p *ngIf="hotel.sale" class="discount-badge">
+      Book now and receive {{ hotel.sale }}% off!
+    </p>
+    <p>
+      <strong>Price:</strong>
+      <span *ngIf="hotel.sale" class="old-price">${{ hotel.price }}</span>
+      <span class="new-price"
+        >${{ hotel.sale ? hotel.newPrice : hotel.price }}</span
+      >
+    </p>
+    <p>Includes taxes and fees.</p>
+  </div>
+
+  <!-- Availability -->
+  <div class="hotel-availability">
+    <h3>Availability:</h3>
+    <ul>
+      <li *ngFor="let range of hotel.availability">
+        From {{ range.start }} to {{ range.end }}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<ng-template #noHotelFound>
+  <p>Sorry, no hotel data available. Please try again.</p>
+</ng-template>

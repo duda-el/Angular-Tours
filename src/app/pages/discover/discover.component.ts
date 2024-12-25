@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../components/header/header.component';
 import { SearchComponent } from '../../components/search/search.component';
 
+
 @Component({
   selector: 'app-discover',
   templateUrl: './discover.component.html',
-  imports: [CommonModule, HeaderComponent, SearchComponent],
+  imports: [CommonModule, HeaderComponent, SearchComponent, RouterModule],
   standalone: true,
   styleUrls: ['./discover.component.css'],
 })
@@ -64,7 +65,6 @@ export class DiscoverComponent implements OnInit {
       console.log('All hotels:', this.filteredHotels);
     });
   }
-  
 
   fetchFilteredHotels(): void {
     this.hotelService
@@ -115,8 +115,12 @@ export class DiscoverComponent implements OnInit {
 
   onPriceFilterChange(event: Event, min: number, max: number): void {
     const checkbox = event.target as HTMLInputElement;
-    console.log('Price filter changed:', { checked: checkbox.checked, min, max });
-  
+    console.log('Price filter changed:', {
+      checked: checkbox.checked,
+      min,
+      max,
+    });
+
     if (checkbox.checked) {
       // Add the selected price range
       this.selectedPriceRanges.push({ min, max });
@@ -126,21 +130,23 @@ export class DiscoverComponent implements OnInit {
         (range) => range.min !== min || range.max !== max
       );
     }
-  
+
     this.filterHotels(); // Trigger filtering
   }
-  
 
   filterHotels(): void {
     if (this.selectedPriceRanges.length === 0) {
       // If no filters are selected, show all hotels
       this.filteredHotels = this.hotels;
-      console.log('No filters selected. Showing all hotels:', this.filteredHotels);
+      console.log(
+        'No filters selected. Showing all hotels:',
+        this.filteredHotels
+      );
       return;
     }
-  
+
     console.log('Selected price ranges:', this.selectedPriceRanges);
-  
+
     // Filter hotels based on selected price ranges
     this.filteredHotels = this.hotels.filter((hotel) => {
       const hotelPrice = hotel.sale ? hotel.newPrice : hotel.price;
@@ -149,8 +155,22 @@ export class DiscoverComponent implements OnInit {
         (range) => validPrice >= range.min && validPrice <= range.max
       );
     });
-  
+
     console.log('Filtered hotels:', this.filteredHotels);
   }
-  
+
+  getHotelsCount(min: number, max: number): number {
+    return this.hotels.filter((hotel) => {
+      const hotelPrice = hotel.sale ? hotel.newPrice : hotel.price;
+      const validPrice = hotelPrice ?? Infinity; // Default to Infinity if undefined
+      return validPrice >= min && validPrice <= max;
+    }).length;
+  }
+
+  slugify(title: string): string {
+    return title
+      .toLowerCase()
+      .replace(/[\s\W-]+/g, '-') // Replace spaces and non-word characters with hyphens
+      .replace(/^-+|-+$/g, ''); // Remove leading or trailing hyphens
+  }
 }
