@@ -1,0 +1,20 @@
+<div class="discover">
+    <h2>Hotels in {{ destination }}</h2>
+    <div *ngIf="hotels.length > 0; else noHotels">
+      <div *ngFor="let hotel of hotels" class="hotel-card">
+        <h3>{{ hotel.title }}</h3>
+        <p>{{ hotel.overview }}</p>
+        <p><strong>Location:</strong> {{ hotel.location }}</p>
+        <p><strong>Rating:</strong> {{ hotel.rating }}</p>
+        <p><strong>Price:</strong> ${{ hotel.price }}</p>
+        <p *ngIf="hotel.sale">
+          <strong>Sale:</strong> {{ hotel.sale }}% Off, New Price: ${{ hotel.newPrice }}
+        </p>
+        <button>Book Now</button>
+      </div>
+    </div>
+    <ng-template #noHotels>
+      <p>No hotels found for your search criteria.</p>
+    </ng-template>
+  </div>
+  
