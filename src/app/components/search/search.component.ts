@@ -22,7 +22,30 @@ export class SearchComponent implements AfterViewInit {
     { name: 'Prague', details: 'Czech Republic' },
     { name: 'Paris', details: 'France' },
     { name: 'Porto', details: 'Portugal' },
+    { name: 'Barcelona', details: 'Spain' },
+    { name: 'Madrid', details: 'Spain' },
+    { name: 'Tbilisi', details: 'Georgia' },
+    { name: 'London', details: 'United Kingdom' },
+    { name: 'Rome', details: 'Italy' },
+    { name: 'Berlin', details: 'Germany' },
+    { name: 'Vienna', details: 'Austria' },
+    { name: 'Amsterdam', details: 'Netherlands' },
+    { name: 'Istanbul', details: 'Turkey' },
+    { name: 'Budapest', details: 'Hungary' },
+    { name: 'Athens', details: 'Greece' },
+    { name: 'Lisbon', details: 'Portugal' },
+    { name: 'New York', details: 'United States' },
+    { name: 'Tokyo', details: 'Japan' },
+    { name: 'Bangkok', details: 'Thailand' },
+    { name: 'Dubai', details: 'United Arab Emirates' },
+    { name: 'Moscow', details: 'Russia' },
+    { name: 'Kuala Lumpur', details: 'Malaysia' },
+    { name: 'Singapore', details: 'Singapore' },
+    { name: 'Sydney', details: 'Australia' },
+    { name: 'Seoul', details: 'South Korea' },
+    { name: 'Cape Town', details: 'South Africa' },
   ];
+
   filteredDestinations: { name: string; details: string }[] = [];
   showSuggestions: boolean = false;
 
@@ -93,6 +116,6 @@ export class SearchComponent implements AfterViewInit {
     };
 
     this.router.navigate(['/discover'], { queryParams });
-    this.searchEvent.emit(queryParams); // Emit event for parent communication
+    this.searchEvent.emit(queryParams);
   }
 }
