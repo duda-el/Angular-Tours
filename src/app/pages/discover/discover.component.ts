@@ -5,12 +5,13 @@ import { Hotel } from '../../models/hotel.model';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../components/header/header.component';
 import { SearchComponent } from '../../components/search/search.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 
 @Component({
   selector: 'app-discover',
   templateUrl: './discover.component.html',
-  imports: [CommonModule, HeaderComponent, SearchComponent, RouterModule],
+  imports: [CommonModule, HeaderComponent, SearchComponent, RouterModule, FooterComponent],
   standalone: true,
   styleUrls: ['./discover.component.css'],
 })

@@ -46,6 +46,48 @@
     </p>
   </div>
 
+  <!-- Price, Rooms, and Availability Section -->
+  <div class="hotel-info-section2">
+    <!-- Price Section -->
+    <div class="price-info">
+      <h3 class="info-title">Price</h3>
+      <p class="info-detail">
+        <i class="fa fa-tag info-icon"></i> ${{
+          hotel.newPrice || hotel.price
+        }}
+        per night
+      </p>
+    </div>
+
+    <!-- Rooms Section -->
+    <div class="rooms-info">
+      <h3 class="info-title">Rooms</h3>
+      <ul>
+        <li *ngFor="let room of hotel.rooms" class="info-detail">
+          <i class="fa fa-bed info-icon"></i> {{ room }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- Availability Section -->
+    <div class="availability-info">
+      <h3 class="info-title">Availability</h3>
+      <ul>
+        <li *ngFor="let range of hotel.availability" class="info-detail">
+          <i class="fa fa-calendar-alt info-icon"></i>{{ range.start }} to
+          {{ range.end }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Reserve Button -->
+  <div class="reserve-button-container">
+    <button class="reserve-button">
+      <i class="fa fa-check-circle"></i> Reserve Now
+    </button>
+  </div>
+
   <!-- Overview Section -->
   <div class="hotel-overview2">
     <h2>Overview</h2>
@@ -97,7 +139,6 @@
   </div>
 </div>
 <app-footer></app-footer>
-<!-- Removed extra closing tag here -->
 
 <ng-template #noHotelFound>
   <p>Sorry, no hotel data available. Please try again.</p>

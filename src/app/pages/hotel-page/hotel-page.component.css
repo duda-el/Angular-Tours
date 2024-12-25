@@ -100,6 +100,7 @@
   margin-top: 20px !important;
   width: 50%;
   background-color: white;
+  border: 1px solid #e0e0e0; /* Clean border */
   height: auto;
   margin-top: 10px;
   margin-left: 40px;
@@ -118,7 +119,7 @@
   margin-top: 5px;
   font-size: 1rem;
   font-family: "sf-pro";
-  color: #4F4F4F;
+  color: #4f4f4f;
 }
 
 .hotel-facilities {
@@ -128,6 +129,7 @@
   margin-left: 40px;
   padding: 10px;
   border-top: 2px solid #e0e0e0;
+  border: 1px solid #e0e0e0; /* Clean border */
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   font-family: "sf-pro";
@@ -204,4 +206,82 @@
 .warning-icon {
   color: #ffcc00;
   margin-right: 5px;
+}
+
+.hotel-info-section2 {
+  width: 51%;
+  display: flex;
+  margin-left: 40px;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0; /* Clean border */
+  border-radius: 8px;
+}
+
+.hotel-info-section2 > div {
+  flex: 1;
+  margin: 0 15px;
+}
+
+.info-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333; /* Blue color for titles */
+  font-family: "sf-pro-bold";
+}
+
+.info-detail {
+  font-size: 1rem;
+  color: #333;
+  font-family: "sf-pro";
+  line-height: 1.4;
+  display: flex;
+  align-items: center; /* Align text and icon on the same line */
+}
+
+.info-detail ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-detail li {
+  margin-bottom: 8px;
+}
+
+/* Icons */
+.info-icon {
+  font-size: 1.2rem;
+  color: #2f80ed; /* Blue color for icons */
+  margin-right: 8px;
+}
+
+.reserve-button-container {
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+.reserve-button {
+  background-color: #2f80ed; /* Cool blue color */
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-family: "sf-pro-bold";
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.reserve-button i {
+  font-size: 1.2rem;
+}
+
+.reserve-button:hover {
+  background-color: #1c5bbf; /* Darker blue on hover */
 }
