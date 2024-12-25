@@ -36,7 +36,7 @@ export class HotelService {
       reviews: 100,
     },
     {
-      image: '/assets/hotels/hotel3.png',
+      image: '/assets/hotels/hotel7.jpg',
       title: 'Mediterranean Escape',
       overview:
         'A beachfront hotel offering exquisite Mediterranean cuisine and stunning sea views.',
@@ -90,7 +90,7 @@ export class HotelService {
       reviews: 800,
     },
     {
-      image: '/assets/hotels/hotel7.png',
+      image: '/assets/hotels/hotel8.jpg',
       title: 'Historic Haven',
       overview:
         'A charming hotel with a mix of historic and modern decor. Perfect for history enthusiasts.',

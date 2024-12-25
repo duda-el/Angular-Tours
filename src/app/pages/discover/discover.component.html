@@ -29,22 +29,53 @@
         <h4>Your budget per day</h4>
         <ul>
           <li>
-            <label><input type="checkbox" /> $0 - $200</label> <span>200</span>
+            <label>
+              <input
+                type="checkbox"
+                (change)="onPriceFilterChange($event, 0, 200)"
+              />
+              $0 - $200
+            </label>
+            <span>200</span>
           </li>
           <li>
-            <label><input type="checkbox" /> $200 - $500</label>
+            <label>
+              <input
+                type="checkbox"
+                (change)="onPriceFilterChange($event, 200, 500)"
+              />
+              $200 - $500
+            </label>
             <span>100</span>
           </li>
           <li>
-            <label><input type="checkbox" /> $500 - $1,000</label>
+            <label>
+              <input
+                type="checkbox"
+                (change)="onPriceFilterChange($event, 500, 1000)"
+              />
+              $500 - $1,000
+            </label>
             <span>15</span>
           </li>
           <li>
-            <label><input type="checkbox" /> $1,000 - $2,000</label>
+            <label>
+              <input
+                type="checkbox"
+                (change)="onPriceFilterChange($event, 1000, 2000)"
+              />
+              $1,000 - $2,000
+            </label>
             <span>12</span>
           </li>
           <li>
-            <label><input type="checkbox" /> $2,000 - $5,000</label>
+            <label>
+              <input
+                type="checkbox"
+                (change)="onPriceFilterChange($event, 2000, 5000)"
+              />
+              $2,000 - $5,000
+            </label>
             <span>230</span>
           </li>
         </ul>
@@ -52,7 +83,7 @@
     </div>
 
     <div class="hotels-list">
-      <div *ngFor="let hotel of hotels" class="hotel-card">
+      <div *ngFor="let hotel of filteredHotels" class="hotel-card">
         <img [src]="hotel.image" alt="{{ hotel.title }}" class="hotel-image" />
         <div class="hotel-details">
           <div class="hotel-info">
@@ -66,7 +97,7 @@
               </span>
               <span>{{ hotel.rating }}</span> ({{ hotel.reviews }} Reviews)
             </p>
-
+    
             <p class="hotel-overview">{{ hotel.overview }}</p>
             <button class="btn">See availability</button>
           </div>
@@ -76,9 +107,7 @@
             </p>
             <p class="rooms">{{ hotel.rooms.length }} room(s) available</p>
             <p class="price">
-              <span *ngIf="hotel.sale" class="old-price"
-                >${{ hotel.price }}</span
-              >
+              <span *ngIf="hotel.sale" class="old-price">${{ hotel.price }}</span>
               <span class="new-price">
                 ${{ hotel.sale ? hotel.newPrice : hotel.price }}
               </span>
@@ -88,6 +117,7 @@
         </div>
       </div>
     </div>
+    
   </div>
 
   <ng-template #noHotels>
