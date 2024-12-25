@@ -11,7 +11,7 @@ export class HotelService {
       images: ['/assets/hotels/hotel1.png', '/assets/hotels/hotel2.png', '/assets/hotels/hotel3.png'],
       title: 'Luxury Suites',
       overview:
-        'Reats include a glass of Czech champagne, parking and a late checkout. Gym included. Flexible cancellation applies.',
+        'Experience unparalleled luxury at Luxury Suites, where elegance meets comfort. Each suite features contemporary decor, spacious layouts, and state-of-the-art amenities. Guests can enjoy complimentary Czech champagne, private parking, and a late checkout. The onsite gym ensures you can maintain your fitness routine even while traveling, and flexible cancellation policies offer peace of mind for every guest. Ideal for business and leisure travelers alike, Luxury Suites promises a memorable stay in the heart of Prague.',
       location: 'Prague, Czech Republic',
       rating: 4.8,
       price: 120,
@@ -23,10 +23,10 @@ export class HotelService {
       reviews: 1200,
     },
     {
-      images: ['/assets/hotels/hotel2.png'],
+      images: ['/assets/hotels/hotel2.png', '/assets/hotels/hotel4.png', '/assets/hotels/hotel5.jpg'],
       title: 'Budget Inn',
       overview:
-        'Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies.',
+        'Budget Inn offers affordable comfort in the vibrant city of Paris. Guests can enjoy a complimentary glass of French champagne upon arrival, along with free parking and late checkout options. Each room is equipped with essential amenities to ensure a convenient stay. Located close to major attractions, Budget Inn is the perfect base for exploring the iconic landmarks and culture of Paris while enjoying unbeatable value.',
       location: 'Paris, France',
       rating: 4.2,
       price: 60,
@@ -36,10 +36,10 @@ export class HotelService {
       reviews: 100,
     },
     {
-      images: ['/assets/hotels/hotel7.jpg'],
+      images: ['/assets/hotels/hotel7.jpg', '/assets/hotels/hotel6.jpg', '/assets/hotels/hotel8.jpg'],
       title: 'Mediterranean Escape',
       overview:
-        'A beachfront hotel offering exquisite Mediterranean cuisine and stunning sea views.',
+        'Mediterranean Escape is a stunning beachfront property offering breathtaking sea views and exquisite Mediterranean cuisine. Each room is tastefully designed with comfort and relaxation in mind, featuring plush bedding and modern amenities. The property also boasts direct access to the beach, making it the ideal destination for sun-seekers and ocean lovers. Whether you’re looking to unwind or indulge in local flavors, Mediterranean Escape offers a unique getaway in Barcelona.',
       location: 'Barcelona, Spain',
       rating: 4.6,
       price: 150,
@@ -49,10 +49,10 @@ export class HotelService {
       reviews: 300,
     },
     {
-      images: ['/assets/hotels/hotel4.png'],
+      images: ['/assets/hotels/hotel4.png', '/assets/hotels/hotel5.jpg', '/assets/hotels/hotel6.jpg'],
       title: 'City Lights Hotel',
       overview:
-        'Located in the heart of the city with easy access to popular attractions. Free breakfast included.',
+        'City Lights Hotel is a contemporary urban retreat located in the heart of Madrid. Offering easy access to the city’s most popular attractions, it is the ideal choice for travelers looking to explore the vibrant culture and history of Spain’s capital. Guests can enjoy complimentary breakfast, comfortable accommodations, and a range of room options tailored to every need. Whether traveling for business or leisure, City Lights Hotel provides an exceptional experience.',
       location: 'Madrid, Spain',
       rating: 4.5,
       price: 100,
@@ -62,10 +62,10 @@ export class HotelService {
       reviews: 250,
     },
     {
-      images: ['/assets/hotels/hotel5.jpg'],
+      images: ['/assets/hotels/hotel5.jpg', '/assets/hotels/hotel7.jpg', '/assets/hotels/hotel8.jpg'],
       title: 'Georgian Comfort Inn',
       overview:
-        'Traditional Georgian hospitality with modern amenities. Close to historical landmarks.',
+        'Immerse yourself in traditional Georgian hospitality at Georgian Comfort Inn. Nestled in the heart of Tbilisi, this charming hotel blends modern amenities with cultural charm. Guests can explore nearby historical landmarks while enjoying spacious rooms, deluxe furnishings, and exceptional service. The property also features a range of dining options, showcasing local and international flavors. Whether you’re visiting for a weekend getaway or a longer stay, Georgian Comfort Inn ensures a welcoming and memorable experience.',
       location: 'Tbilisi, Georgia',
       rating: 4.9,
       price: 90,
@@ -77,10 +77,10 @@ export class HotelService {
       reviews: 500,
     },
     {
-      images: ['/assets/hotels/hotel6.jpg'],
+      images: ['/assets/hotels/hotel6.jpg', '/assets/hotels/hotel4.png', '/assets/hotels/hotel5.jpg'],
       title: 'The Royal Stay',
       overview:
-        'A luxurious hotel offering top-notch amenities and royal treatment for all guests.',
+        'The Royal Stay lives up to its name, offering a regal experience for all its guests. Situated in the heart of London, this luxurious property boasts top-notch amenities and elegant decor. Guests can indulge in world-class dining, spa treatments, and personalized services. Each room is a sanctuary of comfort and sophistication, ensuring an unforgettable stay. Perfect for those seeking luxury and convenience, The Royal Stay is a true gem in the bustling city of London.',
       location: 'London, United Kingdom',
       rating: 5.0,
       price: 200,
@@ -90,10 +90,10 @@ export class HotelService {
       reviews: 800,
     },
     {
-      images: ['/assets/hotels/hotel8.jpg'],
+      images: ['/assets/hotels/hotel8.jpg', '/assets/hotels/hotel7.jpg', '/assets/hotels/hotel6.jpg'],
       title: 'Historic Haven',
       overview:
-        'A charming hotel with a mix of historic and modern decor. Perfect for history enthusiasts.',
+        'Historic Haven is a delightful blend of old-world charm and modern comfort. Located in the heart of Rome, this boutique hotel is a haven for history enthusiasts and culture seekers. Each room is uniquely designed to reflect the rich heritage of the city, complemented by contemporary amenities. Guests can explore nearby historical landmarks, enjoy authentic Italian cuisine, and relax in a serene ambiance. Experience the magic of Rome at Historic Haven.',
       location: 'Rome, Italy',
       rating: 4.7,
       price: 130,

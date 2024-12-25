@@ -1,7 +1,7 @@
 .hotel-details {
   width: 100%;
   background: #f3f3f3;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 .hotel-details-child {
@@ -97,7 +97,7 @@
 }
 
 .hotel-overview2 {
-  margin-top: 5px;
+  margin-top: 20px !important;
   width: 50%;
   background-color: white;
   height: auto;
@@ -116,9 +116,9 @@
 
 .hotel-overview2 p {
   margin-top: 5px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: "sf-pro";
-  color: #181818;
+  color: #4F4F4F;
 }
 
 .hotel-facilities {
@@ -158,7 +158,7 @@
   width: 20px;
   height: 20px;
   font-size: 1.3rem;
-  color: #007bff; /* Icon color */
+  color: #007bff;
 }
 
 .facilities-list-row2 {
@@ -173,4 +173,35 @@
   flex-direction: column;
   align-items: left;
   gap: 10px;
+}
+
+.covid {
+  margin-top: 20px !important;
+  padding-bottom: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.covid-alert {
+  width: 95%;
+  padding: 20px 0px;
+  background-color: #fcefca;
+  border-radius: 8px;
+}
+
+.covid-text {
+  margin-left: 20px;
+  font-family: "sf-pro";
+}
+
+.covid-text span {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.warning-icon {
+  color: #ffcc00;
+  margin-right: 5px;
 }

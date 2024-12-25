@@ -84,7 +84,11 @@
 
     <div class="hotels-list">
       <div *ngFor="let hotel of filteredHotels" class="hotel-card">
-        <img [src]="hotel.images[0]" alt="{{ hotel.title }}" class="hotel-image" />
+        <img
+          [src]="hotel.images[0]"
+          alt="{{ hotel.title }}"
+          class="hotel-image"
+        />
         <div class="hotel-details">
           <div class="hotel-info">
             <h3>{{ hotel.title }}</h3>
@@ -98,7 +102,11 @@
               <span>{{ hotel.rating }}</span> ({{ hotel.reviews }} Reviews)
             </p>
 
-            <p class="hotel-overview">{{ hotel.overview }}</p>
+            <p class="hotel-overview">
+              {{ hotel.overview | slice : 0 : 160
+              }}{{ hotel.overview.length > 160 ? "..." : "" }}
+            </p>
+
             <button class="btn" [routerLink]="['/hotel', slugify(hotel.title)]">
               See availability
             </button>
