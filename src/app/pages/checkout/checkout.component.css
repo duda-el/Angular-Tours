@@ -44,31 +44,33 @@
 }
 
 .checkout-container {
-  width: 300px;
+  border: 1px solid #e0e0e0;
+  width: 100%;
   background-color: white;
   border-radius: 6px;
-  height: 400px;
+  height: 460px;
 }
 
 .checkout-container img {
   width: 100%;
-  height: auto;
+  height: 300px;
   background-size: cover;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
 
 .checkout-container h2 {
-  margin-left: 10px;
+  margin-left: 15px;
   font-family: "sf-pro-bold";
+  margin-top: 10px;
   color: #181818;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .rating {
   font-family: "sf-pro";
   margin-top: 5px;
-  margin-left: 10px;
+  margin-left: 15px;
   color: #4f4f4f;
   font-size: 1rem;
 }
@@ -87,13 +89,13 @@
   color: #eb5757;
   font-family: "sf-pro";
   font-size: 1rem;
-  margin-left: 10px;
+  margin-left: 15px;
   margin-top: 15px;
 }
 
 .availability-dates {
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: 15px;
   font-family: "sf-pro";
 }
 
@@ -123,12 +125,6 @@
   flex-direction: column;
   gap: 100px;
 }
-
-/* .users-data {
-  width: 100%;
-  height: 400px;
-  background-color: yellow;
-} */
 
 .card-details {
   width: 100%;
@@ -223,7 +219,6 @@
   border-left: none;
 }
 
-/* Checkbox Styling */
 .form-check {
   display: flex;
   align-items: center;
@@ -238,3 +233,118 @@
   font-size: 14px;
   color: #4f4f4f;
 }
+
+.price-details-res {
+  width: 400px;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: "sf-pro";
+  overflow: hidden; /* Ensures everything stays within the container */
+  box-sizing: border-box; /* Includes padding and border in width/height calculations */
+}
+
+.price-container {
+  width: 100%;
+}
+
+.price-header {
+  background-color: #85e0ab;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+
+.price-header h3 {
+  font-size: 18px;
+  color: #333333;
+  margin: 0;
+}
+
+.price-content {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: #4f4f4f;
+  margin-bottom: 10px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 15px 0;
+}
+
+.price-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.coupon-text {
+  font-size: 16px;
+  color: #007bff;
+  cursor: pointer;
+  margin-bottom: 15px;
+  text-decoration: none;
+}
+
+.coupon-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.coupon-container label {
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 5px;
+}
+
+.coupon-input-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.coupon-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  background-color: #e0e0e0;
+  box-sizing: border-box;
+  border: none;
+}
+
+.apply-coupon {
+  background-color: #333333;
+  color: white;
+  font-size: 14px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-sizing: border-box; 
+}
+
+.apply-coupon:hover {
+  background-color: #333333;
+}
+
+.hotel-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
