@@ -44,7 +44,7 @@ export class HotelService {
       rating: 4.6,
       price: 150,
       rooms: ['Sea View', 'Suite', 'Standard'],
-      availability: [{ start: '2024-12-15', end: '2024-11-18' }],
+      availability: [{ start: '2024-12-15', end: '2024-12-18' }],
       people: { adults: 2, children: 1 },
       reviews: 300,
     },

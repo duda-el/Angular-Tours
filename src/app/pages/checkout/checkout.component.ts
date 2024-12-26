@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-checkout',
@@ -71,16 +72,29 @@ export class CheckoutComponent implements OnInit {
       this.reservedHotel?.newPrice || this.reservedHotel?.price || 0;
     const totalPrice = nightCount * nightlyPrice + this.tax;
 
-    return totalPrice - this.discount; 
+    return totalPrice - this.discount;
   }
 
   applyCoupon(): void {
     if (this.couponCode === this.validCoupon) {
-      this.discount = this.getTotalPrice() * 0.2; 
-      alert('Coupon applied successfully!');
+      this.discount = this.getTotalPrice() * 0.2;
+
+      Swal.fire({
+        title: 'Success!',
+        text: 'Coupon applied successfully!',
+        icon: 'success',
+        confirmButtonText: 'OK',
+      });
     } else {
       this.discount = 0;
-      alert('Invalid coupon code.');
+
+ 
+      Swal.fire({
+        title: 'Error!',
+        text: 'Invalid coupon code.',
+        icon: 'error',
+        confirmButtonText: 'Try Again',
+      });
     }
   }
 
