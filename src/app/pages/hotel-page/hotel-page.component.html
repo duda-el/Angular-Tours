@@ -52,9 +52,7 @@
     <div class="price-info">
       <h3 class="info-title">Price</h3>
       <p class="info-detail">
-        <i class="fa fa-tag info-icon"></i> ${{
-          hotel.newPrice || hotel.price
-        }}
+        <i class="fa fa-tag info-icon"></i> ${{ hotel.newPrice || hotel.price }}
         per night
       </p>
     </div>
@@ -83,7 +81,11 @@
 
   <!-- Reserve Button -->
   <div class="reserve-button-container">
-    <button class="reserve-button">
+    <button
+      class="reserve-button"
+      [routerLink]="'/checkout'"
+      [queryParams]="{ title: hotel.title }"
+    >
       <i class="fa fa-check-circle"></i> Reserve Now
     </button>
   </div>

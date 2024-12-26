@@ -1,0 +1,11 @@
+<div *ngIf="reservedHotel" class="checkout-container">
+    <h1>Reservation Details</h1>
+    <img [src]="reservedHotel.images[0]" alt="{{ reservedHotel.title }}" class="hotel-image" />
+    <h2>{{ reservedHotel.title }}</h2>
+    <p>Price per night: ${{ reservedHotel.newPrice || reservedHotel.price }}</p>
+  </div>
+  
+  <div *ngIf="!reservedHotel">
+    <p>No reservation details available. Please go back and select a hotel.</p>
+  </div>
+  
