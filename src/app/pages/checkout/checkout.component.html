@@ -93,17 +93,17 @@
         </div>
         <div class="price-container price-content">
           <div class="price-item">
-            <p>1 room X 2 nights</p>
-            <p>$120.32</p>
+            <span>1 room X {{ getNightCount() }} nights</span>
+            <span>${{ reservedHotel?.price }}</span>
           </div>
           <div class="price-item">
-            <p>Tax and service fees</p>
-            <p>$8.32</p>
+            <span>Tax and service fees</span>
+            <span>${{ tax }}</span>
           </div>
           <hr />
           <div class="price-total">
-            <h4>Total</h4>
-            <h4>$130</h4>
+            <span>Total</span>
+            <span>${{ getTotalPrice() }}</span>
           </div>
           <p class="coupon-text">Use a coupon, credit or promotional code</p>
           <div class="coupon-container">

@@ -15,6 +15,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
 })
 export class CheckoutComponent implements OnInit {
   reservedHotel: Hotel | null = null;
+  readonly tax: number = 8.32;
 
   constructor(
     private route: ActivatedRoute,
@@ -45,7 +46,26 @@ export class CheckoutComponent implements OnInit {
 
   createStarArray(rating: number): number[] {
     const maxStars = 5;
-    const validRating = Math.min(Math.max(rating || 0, 0), maxStars); // Ensure rating is between 0 and 5
+    const validRating = Math.min(Math.max(rating || 0, 0), maxStars);
     return Array.from({ length: validRating }, (_, i) => i + 1);
+  }
+
+  getNightCount(): number {
+    if (this.reservedHotel?.availability?.length) {
+      const startDate = new Date(this.reservedHotel.availability[0].start);
+      const endDate = new Date(this.reservedHotel.availability[0].end);
+
+
+      const diffInTime = endDate.getTime() - startDate.getTime();
+      return Math.ceil(diffInTime / (1000 * 3600 * 24));
+    }
+    return 0;
+  }
+
+  getTotalPrice(): number {
+    const nightCount = this.getNightCount();
+    const nightlyPrice =
+      this.reservedHotel?.newPrice || this.reservedHotel?.price || 0;
+    return nightCount * nightlyPrice + this.tax;
   }
 }
