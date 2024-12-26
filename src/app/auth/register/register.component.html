@@ -8,15 +8,16 @@
 <div class="register-main">
   <div class="register-container">
     <h2>Create Account</h2>
-    <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+      <!-- Profile Image Upload -->
       <div class="input-group">
-        <label for="profile-img">Upload Profile Image</label>
         <div class="profile-img-wrapper">
           <img
             [src]="profileImgPreview || 'assets/default-profile.png'"
             alt="Profile Preview"
             class="profile-img-preview"
           />
+          <label for="profile-img">Upload Profile Image</label>
           <input
             type="file"
             id="profile-img"
@@ -26,25 +27,27 @@
         </div>
       </div>
 
+      <!-- Email Input -->
       <div class="input-group">
         <label for="email">Email Address</label>
         <input
           type="email"
           id="email"
-          ngModel
+          [(ngModel)]="email"
           name="email"
           placeholder="Enter your email"
           required
         />
       </div>
 
+      <!-- Password Input -->
       <div class="input-group">
         <label for="password">Password</label>
         <div class="password-wrapper">
           <input
             type="password"
             id="password"
-            ngModel
+            [(ngModel)]="password"
             name="password"
             placeholder="Enter your password"
             required
@@ -54,19 +57,21 @@
           </button>
         </div>
       </div>
-
+      
       <div class="input-group">
         <label for="confirm-password">Confirm Password</label>
         <input
           type="password"
           id="confirm-password"
-          ngModel
+          [(ngModel)]="confirmPassword"
           name="confirmPassword"
           placeholder="Confirm your password"
           required
         />
       </div>
+      
 
+      <!-- Submit Button -->
       <button
         type="submit"
         [disabled]="!registerForm.valid"
@@ -75,21 +80,25 @@
         Create Account
       </button>
 
+      <!-- Divider -->
       <div class="divider">
         <span>or use one of these options</span>
       </div>
 
+      <!-- Google Sign-In Button -->
       <button type="button" class="btn-google">
         <img src="assets/google.svg" alt="Google Logo" class="google-logo" />
         Continue with Google
       </button>
 
+      <!-- Facebook Sign-In Button -->
       <button type="button" class="btn-facebook">
         <i class="fab fa-facebook-f"></i>
         Continue with Facebook
       </button>
     </form>
 
+    <!-- Terms and Conditions -->
     <p class="terms">
       By creating an account, you agree with our
       <a href="#">Terms and Conditions</a> and

@@ -1,16 +1,24 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css',
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
   profileImgPreview: string | ArrayBuffer | null = null;
+  email: string = '';
+  password: string = '';
+  confirmPassword: string = '';
+
+  constructor(private userService: UserService, private router: Router) {}
 
   onImageSelected(event: Event): void {
     const input = event.target as HTMLInputElement;
@@ -24,9 +32,58 @@ export class RegisterComponent {
     }
   }
 
-  onSubmit(registerForm: any): void {
-    if (registerForm.valid) {
-      console.log('Form Submitted:', registerForm.value);
+  onSubmit(): void {
+    if (!this.email.trim()) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Email is required!',
+      });
+      return;
     }
+
+    if (!this.password.trim() || !this.confirmPassword.trim()) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Password and confirm password are required!',
+      });
+      return;
+    }
+
+    if (this.password !== this.confirmPassword) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Passwords do not match!',
+      });
+      return;
+    }
+
+    if (!this.profileImgPreview) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Please upload a profile image!',
+      });
+      return;
+    }
+
+    // Register user
+    this.userService.register(
+      this.email.trim(),
+      this.password.trim(),
+      this.profileImgPreview as string
+    );
+
+    Swal.fire({
+      icon: 'success',
+      title: 'Registration Successful',
+      text: 'You have successfully registered!',
+      timer: 2000,
+      showConfirmButton: false,
+    });
+
+    this.router.navigate(['/']); 
   }
 }

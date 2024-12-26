@@ -13,7 +13,7 @@
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
-    <div class="auth-buttons" *ngIf="!currentUser; else loggedIn">
+    <div *ngIf="!currentUser; else loggedIn" class="auth-buttons">
       <a href="/register" class="register-btn">Register</a>
       <a href="/signin" class="signin-btn">Sign In</a>
     </div>
@@ -21,7 +21,7 @@
     <ng-template #loggedIn>
       <div class="user-menu">
         <img
-          [src]="currentUser?.profileImage"
+          [src]="currentUser?.profileImage || 'assets/default-profile.png'"
           alt="Profile Image"
           class="profile-img"
         />

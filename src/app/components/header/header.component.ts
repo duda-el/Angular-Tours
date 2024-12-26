@@ -15,11 +15,11 @@ export class HeaderComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.currentUser = this.userService.getCurrentUser(); // Get user from session
+    this.currentUser = this.userService.getCurrentUser();
   }
 
   logout() {
     this.userService.logout();
-    this.currentUser = null; 
+    this.currentUser = null;
   }
 }

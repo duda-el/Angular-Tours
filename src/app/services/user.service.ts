@@ -13,6 +13,8 @@ export class UserService {
     },
   ];
 
+  private currentUser: any = null;
+
   constructor() {
     const storedUser = sessionStorage.getItem('currentUser');
     if (storedUser) {
@@ -20,7 +22,17 @@ export class UserService {
     }
   }
 
-  private currentUser: any = null;
+  register(email: string, password: string, profileImage: string) {
+    const newUser = {
+      id: this.users.length + 1,
+      email,
+      password,
+      profileImage,
+    };
+    this.users.push(newUser);
+    this.currentUser = newUser;
+    sessionStorage.setItem('currentUser', JSON.stringify(newUser));
+  }
 
   signIn(email: string, password: string) {
     const user = this.users.find(
