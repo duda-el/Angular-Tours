@@ -69,7 +69,7 @@ export class RegisterComponent {
       return;
     }
 
-    // Register user
+
     this.userService.register(
       this.email.trim(),
       this.password.trim(),

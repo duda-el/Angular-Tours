@@ -8,10 +8,10 @@ import { RegisterComponent } from './auth/register/register.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'signin', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'discover', component: DiscoverComponent },
-  { path: 'hotel/:title', component: HotelPageComponent },
-  { path: 'checkout', component: CheckoutComponent },
+  { path: '/signin', component: LoginComponent },
+  { path: '/register', component: RegisterComponent },
+  { path: '/discover', component: DiscoverComponent },
+  { path: '/hotel/:title', component: HotelPageComponent },
+  { path: '/checkout', component: CheckoutComponent },
   { path: '**', redirectTo: '' },
 ];
