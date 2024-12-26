@@ -1,11 +1,58 @@
-<div *ngIf="reservedHotel" class="checkout-container">
-    <h1>Reservation Details</h1>
-    <img [src]="reservedHotel.images[0]" alt="{{ reservedHotel.title }}" class="hotel-image" />
-    <h2>{{ reservedHotel.title }}</h2>
-    <p>Price per night: ${{ reservedHotel.newPrice || reservedHotel.price }}</p>
+<app-header></app-header>
+<div class="main-check-mom">
+<div class="covid">
+  <div class="covid-alert">
+    <p class="covid-text">
+      <i class="fas fa-exclamation-triangle warning-icon"></i>
+      Check the latest COVID-19 restrictions before you travel.
+      <span>Learn more</span>
+    </p>
   </div>
-  
-  <div *ngIf="!reservedHotel">
-    <p>No reservation details available. Please go back and select a hotel.</p>
+</div>
+<div class="main-check">
+  <div class="pay-options">
+    <div class="users-data"></div>
+    <div class="card-details"></div>
   </div>
-  
+  <div class="hotel-options">
+    <div class="reserved-hotel">
+      <!-- If Hotel is Reserved -->
+      <div *ngIf="reservedHotel" class="checkout-container">
+        <img
+          [src]="reservedHotel.images[0]"
+          alt="{{ reservedHotel.title }}"
+          class="hotel-image"
+        />
+        <h2>{{ reservedHotel.title }}</h2>
+        <p class="rating">
+          <span>
+            <i
+              *ngFor="let star of createStarArray(reservedHotel.rating)"
+              class="fa fa-star star"
+            ></i>
+          </span>
+          <span>{{ reservedHotel.rating }}</span> ({{ reservedHotel.reviews }}
+          Reviews)
+        </p>
+        <p class="non">Non refundable</p>
+        <div class="availability-dates">
+          <ul>
+            <li *ngFor="let range of reservedHotel.availability">
+              Check in: {{ range.start }} <br />
+              Check out: {{ range.end }}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- If No Hotel is Reserved -->
+      <div *ngIf="!reservedHotel">
+        <p>
+          No reservation details available. Please go back and select a hotel.
+        </p>
+      </div>
+    </div>
+    <div class="price-details-res"></div>
+  </div>
+</div>
+</div>

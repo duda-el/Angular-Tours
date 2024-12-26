@@ -1,115 +1,144 @@
-.checkout-container {
-    width: 80%;
-    margin: 0 auto;
-  }
-  
-  h1 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: #333;
-    font-family: "sf-pro-bold";
-  }
-  
-  .covid-alert {
+.main-check-mom{
     display: flex;
-    align-items: center;
-    background-color: #fff3cd;
-    padding: 10px;
-    border-radius: 6px;
-    margin-bottom: 20px;
-  }
-  
-  .covid-alert .warning-icon {
-    color: #856404;
-    margin-right: 10px;
-  }
-  
-  .covid-alert .learn-more {
-    color: #007bff;
-    cursor: pointer;
-    text-decoration: underline;
-  }
-  
-  .checkout-content {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  
-  .room-details {
-    flex: 2;
+    flex-direction: column;
     background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
-  .room-header {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .room-header i {
-    font-size: 1.2rem;
-    color: #2f80ed;
-  }
-  
-  .user-form .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .user-form label {
-    display: block;
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-  }
-  
-  .user-form input[type="text"],
-  .user-form select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    font-size: 0.9rem;
-  }
-  
-  .mobile-input {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .reservation-summary {
-    flex: 1;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-  }
-  
-  .reservation-summary img {
-    width: 100%;
-    border-radius: 6px;
-    margin-bottom: 15px;
-  }
-  
-  .reservation-summary h2 {
-    font-size: 1.2rem;
-    font-family: "sf-pro-bold";
-    margin-bottom: 10px;
-  }
-  
-  .rating {
-    font-size: 1rem;
-    color: #ffc107;
-  }
-  
-  .non-refundable {
-    color: #dc3545;
-    font-size: 0.9rem;
-    margin-top: 10px;
-  }
-  
+}
+.covid {
+  margin-top: 20px !important;
+  padding-bottom: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.covid-alert {
+  width: 90%;
+  padding: 20px 0px;
+  background-color: #fcefca;
+  border-radius: 8px;
+}
+
+.covid-text {
+  margin-left: 20px;
+  font-family: "sf-pro";
+}
+
+.covid-text span {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.warning-icon {
+  color: #f2994a;
+  margin-right: 5px;
+}
+
+.main-check {
+  width: 90%;
+  margin: auto auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.checkout-container {
+  width: 300px;
+  background-color: white;
+  border-radius: 6px;
+  height: 400px;
+}
+
+.checkout-container img {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.checkout-container h2 {
+  margin-left: 10px;
+  font-family: "sf-pro-bold";
+  color: #181818;
+  font-size: 1.4rem;
+}
+
+.rating {
+  font-family: "sf-pro";
+  margin-top: 5px;
+  margin-left: 10px;
+  color: #4f4f4f;
+  font-size: 1.2rem;
+}
+
+.fa-star {
+  color: #f2994a;
+  margin-right: 4px;
+}
+
+.rating span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.non {
+  color: #eb5757;
+  font-family: "sf-pro";
+  font-size: 1rem;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.availability-dates {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-family: "sf-pro";
+}
+
+.availability-dates ul {
+  list-style: none;
+  padding: 0;
+}
+
+.availability-dates li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-size: 1rem;
+  color: #4f4f4f;
+}
+
+.availability-dates i {
+  margin-right: 8px;
+  color: #007bff;
+}
+
+.pay-options {
+  width: 60%;
+  height: 900px;
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.users-data {
+  width: 100%;
+  height: 400px;
+  background-color: yellow;
+}
+
+.card-details {
+  width: 100%;
+  height: 400px;
+  background-color: yellow;
+}
+
+/* .pay-options {
+  width: 60%;
+  height: 300px;
+  background-color: blue;
+} */
