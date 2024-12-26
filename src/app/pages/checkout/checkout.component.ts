@@ -5,17 +5,21 @@ import { Hotel } from '../../models/hotel.model';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-checkout',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, FooterComponent],
+  imports: [CommonModule, HeaderComponent, FooterComponent, FormsModule],
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css'],
 })
 export class CheckoutComponent implements OnInit {
   reservedHotel: Hotel | null = null;
   readonly tax: number = 8.32;
+  couponCode: string = '';
+  discount: number = 0;
+  readonly validCoupon: string = 'DISCOUNT20';
 
   constructor(
     private route: ActivatedRoute,
@@ -30,7 +34,7 @@ export class CheckoutComponent implements OnInit {
         const hotel = hotels.find(
           (hotel) => this.slugify(hotel.title) === this.slugify(title)
         );
-        this.reservedHotel = hotel || null; // Ensure null if no match found
+        this.reservedHotel = hotel || null;
       });
     } else {
       console.error('No hotel title provided in query parameters.');
@@ -55,7 +59,6 @@ export class CheckoutComponent implements OnInit {
       const startDate = new Date(this.reservedHotel.availability[0].start);
       const endDate = new Date(this.reservedHotel.availability[0].end);
 
-
       const diffInTime = endDate.getTime() - startDate.getTime();
       return Math.ceil(diffInTime / (1000 * 3600 * 24));
     }
@@ -66,6 +69,22 @@ export class CheckoutComponent implements OnInit {
     const nightCount = this.getNightCount();
     const nightlyPrice =
       this.reservedHotel?.newPrice || this.reservedHotel?.price || 0;
-    return nightCount * nightlyPrice + this.tax;
+    const totalPrice = nightCount * nightlyPrice + this.tax;
+
+    return totalPrice - this.discount; 
+  }
+
+  applyCoupon(): void {
+    if (this.couponCode === this.validCoupon) {
+      this.discount = this.getTotalPrice() * 0.2; 
+      alert('Coupon applied successfully!');
+    } else {
+      this.discount = 0;
+      alert('Invalid coupon code.');
+    }
+  }
+
+  formatPrice(price: number): string {
+    return price.toFixed(2);
   }
 }

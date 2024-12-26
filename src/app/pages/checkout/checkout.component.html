@@ -103,15 +103,27 @@
           <hr />
           <div class="price-total">
             <span>Total</span>
-            <span>${{ getTotalPrice() }}</span>
+            <span>${{ formatPrice(getTotalPrice()) }}</span>
           </div>
           <p class="coupon-text">Use a coupon, credit or promotional code</p>
           <div class="coupon-container">
             <label for="coupon-code">Coupon code</label>
             <div class="coupon-input-container">
-              <input type="text" id="coupon-code" class="coupon-input" />
-              <button class="apply-coupon">Apply Coupon</button>
+              <input
+                type="text"
+                id="coupon-code"
+                class="coupon-input"
+                [(ngModel)]="couponCode"
+              />
+              <button class="apply-coupon" (click)="applyCoupon()">
+                Apply Coupon
+              </button>
             </div>
+          </div>
+          <hr />
+          <div class="price-total" *ngIf="discount > 0">
+            <span>Discounted Total</span>
+            <span style="color: #2f80ed">20%</span>
           </div>
         </div>
       </div>
