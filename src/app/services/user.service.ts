@@ -28,7 +28,7 @@ export class UserService {
     );
     if (user) {
       this.currentUser = user;
-      sessionStorage.setItem('currentUser', JSON.stringify(user)); // Save user in session
+      sessionStorage.setItem('currentUser', JSON.stringify(user));
     }
     return user;
   }
@@ -39,6 +39,6 @@ export class UserService {
 
   logout() {
     this.currentUser = null;
-    sessionStorage.removeItem('currentUser'); // Remove user from session
+    sessionStorage.removeItem('currentUser');
   }
 }
